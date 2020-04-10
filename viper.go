@@ -538,6 +538,7 @@ func (v *Viper) AddSecureRemoteProvider(provider, endpoint, path, secretkeyring 
 	return nil
 }
 
+func AddGetMetric(getCallMetric func(key string, val interface{})) { v.AddGetMetric(getCallMetric) }
 func (v *Viper) AddGetMetric(getCallMetric func(key string, val interface{})) {
 	v.onGetCallMetric = getCallMetric
 }
